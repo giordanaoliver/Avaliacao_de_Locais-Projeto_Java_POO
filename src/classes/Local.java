@@ -3,21 +3,14 @@ package classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Local {
+public class Local extends Geografia {
     private String nome;
-    private String zona;
-    private String cidade;
-    private String estado;
-    private String pais;
 
     private List<Avaliacao> avaliacoes = new ArrayList<Avaliacao>();
 
     public Local(String nome, String zona, String cidade, String estado, String pais) {
+        super(zona, cidade, estado, pais);
         this.nome = nome;
-        this.zona = zona;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.pais = pais;
     }
 
     public void criarAvaliacao(int estrelas, String comentario) {
@@ -30,10 +23,6 @@ public class Local {
     
     // acessos
     public String getNome() { return this.nome; }
-    public String getZona() { return this.zona; }
-    public String getCidade() { return this.cidade; }
-    public String getEstado() { return this.estado; }
-    public String getPais() { return this.pais; }
 
     public List<Avaliacao> getAvaliacoes() { return this.avaliacoes; }
 }
